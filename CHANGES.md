@@ -8,4 +8,4 @@ Battery display color changes wrt to its percentage:
 
 Notification badge refreshes every time you switch app
 
-
+Music swipe actually works now
