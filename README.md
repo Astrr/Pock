@@ -1,3 +1,5 @@
+> This is a modified version by me, not the original version and this is probably a lot different than it by the time you see this message. To see the changes made by me, read `CHANGES.md`.
+
 <p align="center"><img src="https://pock.dev/assets/img/brand/web-icon-black.png" width="96"/></p>
 <p align="center">Display macOS Dock in Touch Bar.</p>
 <p align="center">It's free and open source, and it also brings some minimalistic widgets with it!
