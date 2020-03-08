@@ -112,5 +112,4 @@ class NowPlayingItemView: PKDetailView {
     override func didLongPressHandler() {
         self.didLongPress?()
     }
-    
 }

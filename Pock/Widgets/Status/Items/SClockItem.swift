@@ -31,13 +31,14 @@ class SClockItem: StatusItem {
         if clockLabel == nil {
             clockLabel = NSTextField()
             clockLabel.frame = CGRect(origin: .zero, size: CGSize(width: 100, height: 44))
-            clockLabel.font = NSFont.systemFont(ofSize: 13)
+            clockLabel.font = NSFont.systemFont(ofSize: 16)
             clockLabel.backgroundColor = .clear
             clockLabel.isBezeled = false
             clockLabel.isEditable = false
+            clockLabel.textColor = .white
             clockLabel.sizeToFit()
         }
-        refreshTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { [weak self] _ in
+        refreshTimer = Timer.scheduledTimer(withTimeInterval: 60, repeats: true, block: { [weak self] _ in
             self?.reload()
         })
     }

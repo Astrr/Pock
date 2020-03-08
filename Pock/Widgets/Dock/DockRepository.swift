@@ -276,7 +276,7 @@ class DockRepository {
     }
     
     /// Load notification badges
-    private func updateNotificationBadges() {
+    /*private*/ func updateNotificationBadges() {
         guard shouldShowNotificationBadge else { return }
         DispatchQueue.main.async { [weak self] in
             guard let s = self else { return }
