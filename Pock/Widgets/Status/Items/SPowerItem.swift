@@ -92,6 +92,12 @@ class SPowerItem: StatusItem {
             }
             if let isCharging = info[kIOPSIsChargingKey] as? Bool {
                 self.powerStatus.isCharging = isCharging
+                
+                if let isCharged = info[kIOPSIsChargedKey] as? Bool {
+                    if isCharged {
+                        self.powerStatus.isCharging = true
+                    }
+                }
             }
         }
         DispatchQueue.main.async { [weak self] in
