@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15400" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15400"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="DockWidgetPreferencePane" customModule="Pock" customModuleProvider="target">
             <connections>
                 <outlet property="appExposeSettingsPicker" destination="Zlx-Ef-hb0" id="sNk-bP-mdO"/>
+                <outlet property="hideApplicationIndicator" destination="SlI-uH-aSc" id="eRg-jE-ZaZ"/>
                 <outlet property="hideFinderCheckbox" destination="caE-kj-Dca" id="oxs-PD-8sv"/>
                 <outlet property="hidePersistentItemsCheckbox" destination="UBz-m6-oWX" id="hWf-bv-jPv"/>
                 <outlet property="hideTrashCheckbox" destination="NIc-hs-c8t" id="FIq-Ge-h8t"/>
@@ -22,17 +23,17 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="340" height="309"/>
+            <rect key="frame" x="0.0" y="0.0" width="340" height="313"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <stackView distribution="fillEqually" orientation="vertical" alignment="leading" spacing="16" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VyA-ug-Nvm">
-                    <rect key="frame" x="20" y="16" width="300" height="277"/>
+                    <rect key="frame" x="20" y="16" width="300" height="281"/>
                     <subviews>
                         <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gFt-UC-6tr">
-                            <rect key="frame" x="0.0" y="247" width="300" height="30"/>
+                            <rect key="frame" x="0.0" y="259" width="300" height="22"/>
                             <subviews>
                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="752" ambiguous="YES" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9xL-NG-zId">
-                                    <rect key="frame" x="-2" y="14" width="224" height="16"/>
+                                    <rect key="frame" x="-2" y="6" width="224" height="16"/>
                                     <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" alignment="left" title="Notification badge refresh rate:" id="ICj-g3-VIO">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -40,7 +41,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <popUpButton verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QqZ-9r-WHQ">
-                                    <rect key="frame" x="226" y="6" width="77" height="25"/>
+                                    <rect key="frame" x="226" y="-2" width="77" height="25"/>
                                     <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="fzh-TY-1IX" id="xk2-Vv-60X">
                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="system"/>
@@ -67,10 +68,10 @@
                             </customSpacing>
                         </stackView>
                         <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xCL-Ye-myT">
-                            <rect key="frame" x="0.0" y="201" width="300" height="30"/>
+                            <rect key="frame" x="0.0" y="220" width="300" height="23"/>
                             <subviews>
                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="752" ambiguous="YES" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jrg-4f-dhp">
-                                    <rect key="frame" x="-2" y="14" width="224" height="16"/>
+                                    <rect key="frame" x="-2" y="7" width="224" height="16"/>
                                     <textFieldCell key="cell" lineBreakMode="clipping" enabled="NO" alignment="left" title="Open App Exposé:" id="r6d-m5-Q8l">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -78,7 +79,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <popUpButton verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zlx-Ef-hb0">
-                                    <rect key="frame" x="226" y="6" width="77" height="25"/>
+                                    <rect key="frame" x="226" y="-1" width="77" height="25"/>
                                     <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" selectedItem="pRj-TS-f3F" id="xoa-68-y75">
                                         <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                         <font key="font" metaFont="system"/>
@@ -105,16 +106,16 @@
                             </customSpacing>
                         </stackView>
                         <box verticalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="P9E-R2-fFj">
-                            <rect key="frame" x="0.0" y="182" width="300" height="5"/>
+                            <rect key="frame" x="0.0" y="201" width="300" height="5"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="ISK-gi-A7b"/>
                             </constraints>
                         </box>
                         <stackView distribution="fillEqually" orientation="vertical" alignment="leading" spacing="13" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ltC-5f-Pcx">
-                            <rect key="frame" x="0.0" y="46" width="267" height="122"/>
+                            <rect key="frame" x="0.0" y="38" width="267" height="149"/>
                             <subviews>
                                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="caE-kj-Dca">
-                                    <rect key="frame" x="-2" y="106" width="92" height="18"/>
+                                    <rect key="frame" x="-2" y="133" width="92" height="18"/>
                                     <buttonCell key="cell" type="check" title="Hide Finder" bezelStyle="regularSquare" imagePosition="left" inset="2" id="PDB-GT-mUQ">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                         <font key="font" metaFont="system"/>
@@ -124,7 +125,7 @@
                                     </connections>
                                 </button>
                                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="8qm-dH-CyJ">
-                                    <rect key="frame" x="-2" y="79" width="167" height="18"/>
+                                    <rect key="frame" x="-2" y="106" width="167" height="18"/>
                                     <buttonCell key="cell" type="check" title="Show only running apps" bezelStyle="regularSquare" imagePosition="left" inset="2" id="qS6-8X-eGs">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                         <font key="font" metaFont="system"/>
@@ -134,7 +135,7 @@
                                     </connections>
                                 </button>
                                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UBz-m6-oWX">
-                                    <rect key="frame" x="-2" y="52" width="152" height="18"/>
+                                    <rect key="frame" x="-2" y="79" width="152" height="18"/>
                                     <buttonCell key="cell" type="check" title="Hide Persistent Items" bezelStyle="regularSquare" imagePosition="left" inset="2" id="1qS-MJ-ICj">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                         <font key="font" metaFont="system"/>
@@ -144,7 +145,7 @@
                                     </connections>
                                 </button>
                                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="NIc-hs-c8t" userLabel="Hide Trash Checkbox">
-                                    <rect key="frame" x="18" y="25" width="88" height="18"/>
+                                    <rect key="frame" x="18" y="52" width="88" height="18"/>
                                     <buttonCell key="cell" type="check" title="Hide Trash" bezelStyle="regularSquare" imagePosition="left" inset="2" id="vFP-uA-jfm">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                         <font key="font" metaFont="system"/>
@@ -154,13 +155,23 @@
                                     </connections>
                                 </button>
                                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="0Pj-5F-vBL">
-                                    <rect key="frame" x="-2" y="-2" width="271" height="18"/>
+                                    <rect key="frame" x="-2" y="25" width="271" height="18"/>
                                     <buttonCell key="cell" type="check" title="Opens Finder and directories inside Pock" bezelStyle="regularSquare" imagePosition="left" inset="2" id="ckK-v4-yvT">
                                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                         <font key="font" metaFont="system"/>
                                     </buttonCell>
                                     <connections>
                                         <action selector="didChangeOpenFinderInsidePockValueWithButton:" target="-2" id="RIh-W4-DlH"/>
+                                    </connections>
+                                </button>
+                                <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="SlI-uH-aSc">
+                                    <rect key="frame" x="-2" y="-2" width="245" height="18"/>
+                                    <buttonCell key="cell" type="check" title="Hide indicators for open applications" bezelStyle="regularSquare" imagePosition="left" inset="2" id="6JS-xY-7JJ">
+                                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                                        <font key="font" metaFont="system"/>
+                                    </buttonCell>
+                                    <connections>
+                                        <action selector="didChangeHideApplicationIndicatorValueWithButton:" target="-2" id="3zg-hG-RBt"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -173,8 +184,10 @@
                                 <integer value="1000"/>
                                 <integer value="1000"/>
                                 <integer value="1000"/>
+                                <integer value="1000"/>
                             </visibilityPriorities>
                             <customSpacing>
+                                <real value="3.4028234663852886e+38"/>
                                 <real value="3.4028234663852886e+38"/>
                                 <real value="3.4028234663852886e+38"/>
                                 <real value="3.4028234663852886e+38"/>
@@ -183,10 +196,10 @@
                             </customSpacing>
                         </stackView>
                         <stackView distribution="fill" orientation="horizontal" alignment="top" spacing="10" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hrd-H5-paz">
-                            <rect key="frame" x="0.0" y="0.0" width="137" height="30"/>
+                            <rect key="frame" x="0.0" y="0.0" width="137" height="22"/>
                             <subviews>
                                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rdj-tL-R0L">
-                                    <rect key="frame" x="-2" y="14" width="86" height="16"/>
+                                    <rect key="frame" x="-2" y="6" width="86" height="16"/>
                                     <textFieldCell key="cell" lineBreakMode="clipping" title="Item spacing:" id="qJw-Vc-w0w">
                                         <font key="font" metaFont="system"/>
                                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
@@ -194,7 +207,7 @@
                                     </textFieldCell>
                                 </textField>
                                 <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="VVh-2X-SdG">
-                                    <rect key="frame" x="92" y="8" width="45" height="22"/>
+                                    <rect key="frame" x="92" y="0.0" width="45" height="22"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="45" id="jzh-nQ-SDe"/>
                                     </constraints>

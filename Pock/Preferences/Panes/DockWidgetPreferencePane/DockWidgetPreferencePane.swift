@@ -19,6 +19,7 @@ class DockWidgetPreferencePane: NSViewController, PreferencePane {
     @IBOutlet weak var hideTrashCheckbox:                  NSButton!
     @IBOutlet weak var hidePersistentItemsCheckbox:        NSButton!
     @IBOutlet weak var openFinderInsidePockCheckbox:       NSButton!
+    @IBOutlet weak var hideApplicationIndicator:       NSButton!
     @IBOutlet weak var itemSpacingTextField:               NSTextField!
     
     /// Preferenceable
@@ -68,6 +69,7 @@ class DockWidgetPreferencePane: NSViewController, PreferencePane {
         self.hideTrashCheckbox.state            = Defaults[.hideTrash]            ? .on : .off
         self.hidePersistentItemsCheckbox.state  = Defaults[.hidePersistentItems]  ? .on : .off
         self.openFinderInsidePockCheckbox.state = Defaults[.openFinderInsidePock] ? .on : .off
+        self.hideApplicationIndicator.state = Defaults[.hideOpenIndicator] ? .on : .off
         self.hideTrashCheckbox.isEnabled        = !Defaults[.hidePersistentItems]
     }
 
@@ -93,6 +95,11 @@ class DockWidgetPreferencePane: NSViewController, PreferencePane {
     @IBAction private func didChangeHideTrashValue(button: NSButton) {
         Defaults[.hideTrash] = button.state == .on
         NSWorkspace.shared.notificationCenter.post(name: .shouldReloadPersistentItems, object: nil)
+    }
+    
+    @IBAction private func didChangeHideApplicationIndicatorValue(button: NSButton) {
+        Defaults[.hideOpenIndicator] = button.state == .on
+        NSWorkspace.shared.notificationCenter.post(name: .shouldReloadDock, object: nil)
     }
     
     @IBAction private func didChangeHidePersistentValue(button: NSButton) {

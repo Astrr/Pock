@@ -8,8 +8,10 @@
 
 import Foundation
 import SnapKit
+import Defaults
 
 class DockItemView: NSScrubberItemView {
+    
     
     /// Core
     private static let kBounceAnimationKey: String = "kBounceAnimationKey"
@@ -124,6 +126,7 @@ class DockItemView: NSScrubberItemView {
     
     public func set(isRunning: Bool) {
         if dotView == nil { loadDotView() }
+        dotView.isHidden = Defaults[.hideOpenIndicator]
         dotView.layer?.opacity = isRunning ? 1 : 0
     }
     public var isRunning: Bool { return dotView.layer?.opacity == 1 }
