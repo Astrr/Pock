@@ -111,10 +111,15 @@ class SPowerItem: StatusItem {
             if powerStatus.isCharging {
                 iconView.subviews.forEach({ $0.removeFromSuperview() })
                 iconName = "powerIsCharging"
+                
+                if powerStatus.currentValue == 100 {
+                    iconName = "powerIsCharged"
+                }
             }else {
                 iconName = "powerEmpty"
                 buildBatteryIcon(withValue: value)
             }
+            
             iconView.image    = NSImage(named: iconName)
             iconView.isHidden = false
         }else {
