@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -84,6 +84,8 @@
 		96BE2701237171DC0031B31F /* CCScreensaverItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BE2700237171DC0031B31F /* CCScreensaverItem.swift */; };
 		96E7A152239B99F700CB4C4C /* CCDoNotDisturbItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E7A151239B99F700CB4C4C /* CCDoNotDisturbItem.swift */; };
 		96FE269F22D0C3810071645C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 96FE26A122D0C3810071645C /* Localizable.strings */; };
+		979BE93B2437E7D800BE0B98 /* Pods-Pock.debug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 3BA42833BC69C895EB31DF93 /* Pods-Pock.debug.xcconfig */; };
+		979BE93C2437E7DB00BE0B98 /* Pods-Pock.release.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 716D62071D19174E56D6E33D /* Pods-Pock.release.xcconfig */; };
 		9955665222DC668500EFFE6D /* CCVolumeMuteItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9955665122DC668500EFFE6D /* CCVolumeMuteItem.swift */; };
 /* End PBXBuildFile section */
 
@@ -209,6 +211,13 @@
 		96F29996231797C00055DA26 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/GeneralPreferencePane.strings; sourceTree = "<group>"; };
 		96F2999A2317980B0055DA26 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/ControlCenterWidgetPreferencePane.strings"; sourceTree = "<group>"; };
 		96FE26A022D0C3810071645C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		973E43BC2437DA0600D3F985 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/DockFolderController.strings; sourceTree = "<group>"; };
+		973E43BD2437DA0600D3F985 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/GeneralPreferencePane.strings; sourceTree = "<group>"; };
+		973E43BE2437DA0600D3F985 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/StatusWidgetPreferencePane.strings; sourceTree = "<group>"; };
+		973E43BF2437DA0600D3F985 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ControlCenterWidgetPreferencePane.strings; sourceTree = "<group>"; };
+		973E43C02437DA0700D3F985 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/DockWidgetPreferencePane.strings; sourceTree = "<group>"; };
+		973E43C12437DA0700D3F985 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/NowPlayingPreferencePane.strings; sourceTree = "<group>"; };
+		973E43C22437DA0700D3F985 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		9955665122DC668500EFFE6D /* CCVolumeMuteItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCVolumeMuteItem.swift; sourceTree = "<group>"; };
 		AAA3636F2333699C0016267D /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/DockFolderController.strings"; sourceTree = "<group>"; };
 		AAA363702333699C0016267D /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/GeneralPreferencePane.strings"; sourceTree = "<group>"; };
@@ -666,6 +675,7 @@
 		348343CE1F631B2E00CDA005 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Pierluigi Galdi";
@@ -683,7 +693,7 @@
 				};
 			};
 			buildConfigurationList = 348343D11F631B2E00CDA005 /* Build configuration list for PBXProject "Pock" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -693,6 +703,7 @@
 				it,
 				tr,
 				"zh-Hant",
+				ru,
 			);
 			mainGroup = 348343CD1F631B2E00CDA005;
 			productRefGroup = 348343D71F631B2E00CDA005 /* Products */;
@@ -713,12 +724,14 @@
 				347D7EE7230874A800BA9200 /* ControlCenterWidgetPreferencePane.xib in Resources */,
 				342D83DF2278D5CF000D79DA /* MainWindow.xib in Resources */,
 				3418DA022288318A00E11E37 /* PKSlideableController.xib in Resources */,
+				979BE93C2437E7DB00BE0B98 /* Pods-Pock.release.xcconfig in Resources */,
 				3482609723A687770053432B /* NowPlayingPreferencePane.xib in Resources */,
 				3407F9EF22D1C9970072E742 /* AppExposeController.xib in Resources */,
 				9667AAF222CF192D00C22410 /* GeneralPreferencePane.xib in Resources */,
 				96FE269F22D0C3810071645C /* Localizable.strings in Resources */,
 				3406434D227F3FFF00981372 /* PockMainController.xib in Resources */,
 				9667AAFB22CF1A5700C22410 /* StatusWidgetPreferencePane.xib in Resources */,
+				979BE93B2437E7D800BE0B98 /* Pods-Pock.debug.xcconfig in Resources */,
 				9667AB0422CF1ABA00C22410 /* DockWidgetPreferencePane.xib in Resources */,
 				342D83E72278D5CF000D79DA /* Assets.xcassets in Resources */,
 			);
@@ -788,23 +801,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Pock/Pods-Pock-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Defaults/Defaults.framework",
-				"${BUILT_PRODUCTS_DIR}/LoginServiceKit/LoginServiceKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Magnet/Magnet.framework",
-				"${BUILT_PRODUCTS_DIR}/PockKit/PockKit.framework",
-				"${BUILT_PRODUCTS_DIR}/Preferences/Preferences.framework",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pock/Pods-Pock-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Defaults.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LoginServiceKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Magnet.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PockKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Preferences.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pock/Pods-Pock-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -895,6 +897,7 @@
 				3482609F23A687820053432B /* zh-Hant */,
 				348260A123A687820053432B /* it */,
 				348260A323A687830053432B /* tr */,
+				973E43C12437DA0700D3F985 /* ru */,
 			);
 			name = NowPlayingPreferencePane.xib;
 			sourceTree = "<group>";
@@ -908,6 +911,7 @@
 				34A8060422F6B97000621235 /* it */,
 				881719822334CAFA00CEFF2B /* tr */,
 				AAA3636F2333699C0016267D /* zh-Hant */,
+				973E43BC2437DA0600D3F985 /* ru */,
 			);
 			name = DockFolderController.xib;
 			sourceTree = "<group>";
@@ -921,6 +925,7 @@
 				881719832334CAFA00CEFF2B /* tr */,
 				AAA363702333699C0016267D /* zh-Hant */,
 				96F29996231797C00055DA26 /* en */,
+				973E43BD2437DA0600D3F985 /* ru */,
 			);
 			name = GeneralPreferencePane.xib;
 			sourceTree = "<group>";
@@ -934,6 +939,7 @@
 				AAA363712333699C0016267D /* zh-Hant */,
 				96F29990231797060055DA26 /* zh-Hans */,
 				96E3DD8C2357258600AA719D /* en */,
+				973E43BE2437DA0600D3F985 /* ru */,
 			);
 			name = StatusWidgetPreferencePane.xib;
 			sourceTree = "<group>";
@@ -947,6 +953,7 @@
 				96E468B32351BC7900A20E56 /* zh-Hant */,
 				96E468B42351BC7B00A20E56 /* it */,
 				96E468B52351BC7F00A20E56 /* tr */,
+				973E43C02437DA0700D3F985 /* ru */,
 			);
 			name = DockWidgetPreferencePane.xib;
 			sourceTree = "<group>";
@@ -960,6 +967,7 @@
 				AAA363722333699C0016267D /* zh-Hant */,
 				96F2999A2317980B0055DA26 /* zh-Hans */,
 				96E7A15A239BA74E00CB4C4C /* en */,
+				973E43BF2437DA0600D3F985 /* ru */,
 			);
 			name = ControlCenterWidgetPreferencePane.xib;
 			sourceTree = "<group>";
@@ -972,6 +980,7 @@
 				34A8060922F6B97000621235 /* it */,
 				881719872334CAFA00CEFF2B /* tr */,
 				AAA363742333699C0016267D /* zh-Hant */,
+				973E43C22437DA0700D3F985 /* ru */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1085,7 +1094,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;
 		};
@@ -1107,7 +1117,11 @@
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Pock/Various/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@loader_path/../Frameworks",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12.2;
 				MARKETING_VERSION = 0.7.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pigigaldi.pock;
@@ -1135,7 +1149,11 @@
 					"$(SYSTEM_LIBRARY_DIR)/PrivateFrameworks",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Pock/Various/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@loader_path/../Frameworks",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.12.2;
 				MARKETING_VERSION = 0.7.3;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pigigaldi.pock;

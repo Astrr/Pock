@@ -1,0 +1,47 @@
+/*
+ Localizable.strings
+ Pock
+ 
+ Created by Licardo on 2019/7/6.
+ Copyright © 2019 Pierluigi Galdi. All rights reserved.
+ */
+
+"General" = "Общее";
+"Status Widget" = "Виджет Статуса";
+"Dock Widget" = "Виджет Dock";
+"Esc key" = "Кнопка Esc";
+"Dock" = "Dock";
+"Unknown" = "Неизвестно";
+"Now Playing" = "Играет";
+"Control Center" = "Центр Управления";
+"Status" = "Статус";
+"Never" = "Никогда";
+"Instantly" = "Сразу";
+"1 second" = "1 секунда";
+"5 seconds" = "5 секунд";
+"10 seconds" = "10 секунд";
+"30 seconds" = "30 секунд";
+"1 minute" = "1 минута";
+"3 minutes" = "3 минуты";
+"More Than 1 Window" = "Если открыто несколько окон";
+"Always" = "Всегда";
+"Pock Options" = "Опции Pock";
+"Preferences…" = "Настройки…";
+"Customize…" = "Кастомизировать…";
+"Support this project" = "Поддержать этот проект";
+"Quit Pock" = "Выйти из Pock";
+"Checking…"= "Проверка…";
+"Installed version" = "Установленная версия";
+"Already on latest version" = "Вы уже на самой новой версии";
+"Check for updates" = "Проверить наличие обновлений";
+"New version available!" = "Доступна новая версия!";
+"Download" = "Загрузить";
+"Later" = "Потом";
+"No Playback" = "Ничего не играет";
+"Do you want to download version" = "Хотите ли вы скачать версию";
+"now?" = "сейчас?";
+"Control Center Widget" = "Виджет Центра Управления";
+"windows" = "windows";
+"Loading..." = "Загрузка...";
+"elements" = "elements";
+"Trash" = "корзина";

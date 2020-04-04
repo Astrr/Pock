@@ -1,0 +1,39 @@
+
+/* Class = "NSButtonCell"; title = "Show Volume Mute Item"; ObjectID = "0cO-cp-q0P"; */
+"0cO-cp-q0P.title" = "Показать кнопку выключения звука";
+
+/* Class = "NSButtonCell"; title = "Show Screensaver Item"; ObjectID = "2xh-EW-PL2"; */
+"2xh-EW-PL2.title" = "Показать выключатель скринсейвера";
+
+/* Class = "NSButtonCell"; title = "Show Volume Items"; ObjectID = "A1L-D1-Jwj"; */
+"A1L-D1-Jwj.title" = "Показать кнопки управления звуком";
+
+/* Class = "NSButtonCell"; title = "Show Volume Up Item"; ObjectID = "AJ4-PK-Oid"; */
+"AJ4-PK-Oid.title" = "Показать кнопку увеличения громкости";
+
+/* Class = "NSButtonCell"; title = "Show Do Not Disturb Item"; ObjectID = "BRS-Qc-kaR"; */
+"BRS-Qc-kaR.title" = "Показать переключатель режима \"Не беспокоить\""
+
+/* Class = "NSButtonCell"; title = "Show Lock Item"; ObjectID = "OGc-Cn-VS5"; */
+"OGc-Cn-VS5.title" = "Показать кнопку блокировки";
+
+/* Class = "NSButtonCell"; title = "Show Brightness Down Item"; ObjectID = "S9t-Wy-9IV"; */
+"S9t-Wy-9IV.title" = "Показать кнопку уменьшения яркости";
+
+/* Class = "NSButtonCell"; title = "Show Volume Down Item"; ObjectID = "Zze-FZ-vdx"; */
+"Zze-FZ-vdx.title" = "Показать кнопку уменьшения громкости";
+
+/* Class = "NSButtonCell"; title = "Show Sleep Item"; ObjectID = "c9g-yA-umL"; */
+"c9g-yA-umL.title" = "Показать кнопку переходаа в спящий режим";
+
+/* Class = "NSButtonCell"; title = "Show Volume Toggle Item"; ObjectID = "oTc-dK-63V"; */
+"oTc-dK-63V.title" = "Показать переключатель звука";
+
+/* Class = "NSButtonCell"; title = "Show Brightness Toggle Item"; ObjectID = "po1-9a-abU"; */
+"po1-9a-abU.title" = "Показать переключатель яркости";
+
+/* Class = "NSButtonCell"; title = "Show Brightness Up Item"; ObjectID = "zlO-nx-U7P"; */
+"zlO-nx-U7P.title" = "Показать кнопку увеличения яркости";
+
+/* Class = "NSButtonCell"; title = "Show Brightness Items"; ObjectID = "zt4-Gu-yzF"; */
+"zt4-Gu-yzF.title" = "Показать кнопки управления яркостью";

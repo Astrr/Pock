@@ -7,7 +7,7 @@ target 'Pock' do
 
   # PockKit
   pod 'PockKit'
-  
+
   # Pods for Pock
   pod 'Fabric'
   pod 'Crashlytics'
@@ -15,5 +15,5 @@ target 'Pock' do
   pod 'Defaults'
   pod 'Preferences'
   pod 'LoginServiceKit', :git => 'https://github.com/Clipy/LoginServiceKit.git'
-  
+
 end
