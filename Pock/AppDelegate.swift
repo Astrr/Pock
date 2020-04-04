@@ -9,8 +9,6 @@
 import Cocoa
 import Defaults
 import Preferences
-import Fabric
-import Crashlytics
 import Magnet
 @_exported import PockKit
 
@@ -46,8 +44,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         /// Initialize Crashlytics
         if isProd {
-            UserDefaults.standard.register(defaults: ["NSApplicationCrashOnExceptions": true])
-            Fabric.with([Crashlytics.self])
+            //UserDefaults.standard.register(defaults: ["NSApplicationCrashOnExceptions": true])
+            
         }
         
         /// Check for accessibility (needed for badges to work)
