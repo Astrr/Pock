@@ -1,21 +1,21 @@
 
 /* Class = "NSTextFieldCell"; title = "Time Format:"; ObjectID = "6tU-S4-ovU"; */
-"6tU-S4-ovU.title" = "Time Format:";
+"6tU-S4-ovU.title" = "Формат времени:";
 
 /* Class = "NSButtonCell"; title = "Show Power item"; ObjectID = "OGc-Cn-VS5"; */
-"OGc-Cn-VS5.title" = "Show Power item";
+"OGc-Cn-VS5.title" = "Показать элементы питания";
 
 /* Class = "NSButton"; ibShadowedToolTip = "Time Format Help"; ObjectID = "QDl-u9-yz3"; */
-"QDl-u9-yz3.ibShadowedToolTip" = "Time Format Help";
+"QDl-u9-yz3.ibShadowedToolTip" = "Помощь по форматам времени";
 
 /* Class = "NSButtonCell"; title = "Show Battery Icon"; ObjectID = "S9t-Wy-9IV"; */
-"S9t-Wy-9IV.title" = "Show Battery Icon";
+"S9t-Wy-9IV.title" = "Показывать иконку батареи";
 
 /* Class = "NSButtonCell"; title = "Show Date item"; ObjectID = "Zze-FZ-vdx"; */
-"Zze-FZ-vdx.title" = "Show Date item";
+"Zze-FZ-vdx.title" = "Показывать дату и время";
 
 /* Class = "NSButtonCell"; title = "Show Wifi item"; ObjectID = "c9g-yA-umL"; */
-"c9g-yA-umL.title" = "Show Wifi item";
+"c9g-yA-umL.title" = "Показывать статус Wi-Fi";
 
 /* Class = "NSButtonCell"; title = "Show Battery Percentage"; ObjectID = "zlO-nx-U7P"; */
-"zlO-nx-U7P.title" = "Show Battery Percentage";
+"zlO-nx-U7P.title" = "Показывать заряд батареи в процентах";
