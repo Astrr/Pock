@@ -63,13 +63,16 @@ class SPowerItem: StatusItem {
     
     func action() {
         if !isProd { print("[Pock]: Power Status icon tapped!") }
+        print("[Pock]: Power Status icon tapped!")
+        self.reload()
     }
     
     private func configureValueLabel() {
-        valueLabel.font = NSFont.systemFont(ofSize: 13)
+        valueLabel.font = NSFont.systemFont(ofSize: 16)
         valueLabel.backgroundColor = .clear
         valueLabel.isBezeled = false
         valueLabel.isEditable = false
+        valueLabel.textColor = .white
         valueLabel.sizeToFit()
     }
     
@@ -129,6 +132,25 @@ class SPowerItem: StatusItem {
         }
         valueLabel.stringValue = shouldShowBatteryPercentage ? "\(value)%" : ""
         valueLabel.isHidden    = !shouldShowBatteryPercentage
+        if powerStatus.isCharging {
+            valueLabel.textColor = .green
+        }
+        else {
+            if (value < 20) {
+                valueLabel.textColor = .red
+            }
+            else if (value < 50) {
+                valueLabel.textColor = .orange
+            }
+            else if (value < 70) {
+                valueLabel.textColor = .yellow
+            }
+            else {
+                valueLabel.textColor = .green
+            }
+//            valueLabel.textColor = .white
+//            valueLabel.textColor = NSColor(calibratedHue: CGFloat(value) / 100 / 3, saturation: 1, brightness: 1, alpha: 1)
+        }
     }
     
     private func buildBatteryIcon(withValue value: Int) {
@@ -136,7 +158,19 @@ class SPowerItem: StatusItem {
         if !iconView.subviews.contains(bodyView) {
             iconView.addSubview(bodyView)
         }
-        bodyView.layer?.backgroundColor = value > 10 ? NSColor.lightGray.cgColor : NSColor.red.cgColor
+//        bodyView.layer?.backgroundColor = value > 10 ? NSColor.lightGray.cgColor : NSColor.red.cgColor
+        if (value < 20) {
+            bodyView.layer?.backgroundColor = NSColor.red.cgColor
+        }
+//        else if (value < 50) {
+//            bodyView.layer?.backgroundColor = NSColor.orange.cgColor
+//        }
+        else if (value < 50) {
+            bodyView.layer?.backgroundColor = NSColor.yellow.cgColor
+        }
+        else {
+            bodyView.layer?.backgroundColor = NSColor.green.cgColor
+        }
         bodyView.frame.size.width = max(width, 1.25)
     }
 }

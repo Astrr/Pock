@@ -14,21 +14,21 @@ import Magnet
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
-    
+
     static var `default`: AppDelegate {
         return NSApp.delegate as! AppDelegate
     }
-    
+
     /// Core
     fileprivate var _navController: PKTouchBarNavController?
     var navController: PKTouchBarNavController? { return _navController }
-    
+
     /// Timer
     fileprivate var automaticUpdatesTimer: Timer?
-    
+
     /// Status bar Pock icon
     fileprivate let pockStatusbarIcon = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
-    
+
     /// Preferences
     fileprivate let generalPreferencePane: GeneralPreferencePane = GeneralPreferencePane()
     fileprivate let dockWidgetPreferencePane: DockWidgetPreferencePane = DockWidgetPreferencePane()
@@ -36,21 +36,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     fileprivate let controlCenterWidgetPreferencePane: ControlCenterWidgetPreferencePane = ControlCenterWidgetPreferencePane()
     fileprivate let nowPlayingWidgetPreferencePane: NowPlayingPreferencePane = NowPlayingPreferencePane()
     fileprivate var preferencesWindowController: PreferencesWindowController!
-    
+
     /// Finish launching
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         NSApp.isAutomaticCustomizeTouchBarMenuItemEnabled = true
-        
+
         /// Initialize Crashlytics
-        if isProd {
-            //UserDefaults.standard.register(defaults: ["NSApplicationCrashOnExceptions": true])
-            
-        }
-        
+//        if isProd {
+//            UserDefaults.standard.register(defaults: ["NSApplicationCrashOnExceptions": true])
+//            Fabric.with([Crashlytics.self])
+//        }
+
         /// Check for accessibility (needed for badges to work)
         self.checkAccessibility()
-        
+
         /// Preferences
         self.preferencesWindowController = PreferencesWindowController(preferencePanes: [
             generalPreferencePane,
@@ -59,7 +59,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             controlCenterWidgetPreferencePane,
             nowPlayingWidgetPreferencePane
         ])
-        
+
         /// Check for status bar icon
         if let button = pockStatusbarIcon.button {
             button.image = NSImage(named: "pock-inner-icon")
@@ -74,12 +74,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             menu.addItem(withTitle: "Quit Pock".localized, action: #selector(NSApp.terminate), keyEquivalent: "q")
             pockStatusbarIcon.menu = menu
         }
-        
+
         /// Check for updates
         DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: { [weak self] in
             self?.checkForUpdates()
         })
-        
+
         /// Register for notification
         NSWorkspace.shared.notificationCenter.addObserver(self,
                                                           selector: #selector(toggleAutomaticUpdatesTimer),
@@ -91,29 +91,29 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                                                           object: nil)
         toggleAutomaticUpdatesTimer()
         registerGlobalHotKey()
-        
+
         /// Present Pock
         self.reloadPock()
-        
+
         /// Set Pock inactive
         NSApp.deactivate()
-        
+
         ///Reload Control Center Widget every 1 second in order to sync volume item icon with system
         Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(reloadControlCenterWidget), userInfo: nil, repeats: true)
 
     }
-    
+
     @objc func reloadControlCenterWidget() {
         NSWorkspace.shared.notificationCenter.post(name: .shouldReloadControlCenterWidget, object: nil)
     }
-    
+
     @objc func reloadPock() {
         _navController?.dismiss()
         _navController = nil
         let mainController: PockMainController = PockMainController.load()
         _navController = PKTouchBarNavController(rootController: mainController)
     }
-    
+
     private func registerGlobalHotKey() {
         if let keyCombo = KeyCombo(doubledCocoaModifiers: .control) {
             let hotKey = HotKey(identifier: "TogglePock", keyCombo: keyCombo) { [weak self] _ in
@@ -122,7 +122,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             hotKey.register()
         }
     }
-    
+
     @objc private func toggleAutomaticUpdatesTimer() {
         if Defaults[.enableAutomaticUpdates] {
             automaticUpdatesTimer = Timer.scheduledTimer(timeInterval: 86400 /*24h*/, target: self, selector: #selector(checkForUpdates), userInfo: nil, repeats: true)
@@ -131,14 +131,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             automaticUpdatesTimer = nil
         }
     }
-    
+
     /// Will terminate
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
         _navController?.dismiss()
         _navController = nil
     }
-    
+
     /// Check for updates
     @objc private func checkForUpdates() {
         generalPreferencePane.hasLatestVersion(completion: { [weak self] versionNumber, downloadURL in
@@ -149,7 +149,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         })
     }
-    
+
     /// Check for accessibility
     @discardableResult
     private func checkAccessibility() -> Bool {
@@ -158,19 +158,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let accessEnabled = AXIsProcessTrustedWithOptions(options as CFDictionary?)
         return accessEnabled
     }
-    
+
     /// Open preferences
     @objc private func openPreferences() {
         preferencesWindowController.show()
     }
-    
+
     @objc private func openCustomization() {
         (_navController?.rootController as? PockMainController)?.openCustomization()
     }
-    
+
     @objc private func openDonateURL() {
         guard let url = URL(string: "https://paypal.me/pigigaldi") else { return }
         NSWorkspace.shared.open(url)
     }
-    
+
 }

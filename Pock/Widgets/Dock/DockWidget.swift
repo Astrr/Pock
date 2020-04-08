@@ -189,6 +189,7 @@ extension DockWidget: DockDelegate {
                 view.set(isRunning:   item?.isRunning   ?? false)
                 view.set(isFrontmost: item?.isFrontmost ?? false)
                 view.set(isLaunching: item?.isLaunching ?? false)
+                self?.dockRepository.updateNotificationBadges()
             })
         }
     }
