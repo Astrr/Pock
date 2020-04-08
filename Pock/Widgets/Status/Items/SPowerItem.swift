@@ -68,11 +68,10 @@ class SPowerItem: StatusItem {
     }
     
     private func configureValueLabel() {
-        valueLabel.font = NSFont.systemFont(ofSize: 16)
+        valueLabel.font = NSFont.systemFont(ofSize: 13)
         valueLabel.backgroundColor = .clear
         valueLabel.isBezeled = false
         valueLabel.isEditable = false
-        valueLabel.textColor = .white
         valueLabel.sizeToFit()
     }
     
@@ -132,7 +131,7 @@ class SPowerItem: StatusItem {
         }
         valueLabel.stringValue = shouldShowBatteryPercentage ? "\(value)%" : ""
         valueLabel.isHidden    = !shouldShowBatteryPercentage
-        if powerStatus.isCharging {
+       /* if powerStatus.isCharging {
             valueLabel.textColor = .green
         }
         else {
@@ -148,9 +147,9 @@ class SPowerItem: StatusItem {
             else {
                 valueLabel.textColor = .green
             }
-//            valueLabel.textColor = .white
-//            valueLabel.textColor = NSColor(calibratedHue: CGFloat(value) / 100 / 3, saturation: 1, brightness: 1, alpha: 1)
-        }
+            valueLabel.textColor = .white
+            valueLabel.textColor = NSColor(calibratedHue: CGFloat(value) / 100 / 3, saturation: 1, brightness: 1, alpha: 1)
+        }*/
     }
     
     private func buildBatteryIcon(withValue value: Int) {
