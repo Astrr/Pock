@@ -387,6 +387,19 @@ extension DockRepository {
         }
     }
     
+    public func quit(item: DockItem?) {
+        guard let _item = item, let identifier = _item.bundleIdentifier else {
+            return
+        }
+        let apps = NSRunningApplication.runningApplications(withBundleIdentifier: identifier)
+        if apps.count > 0 {
+            NSRunningApplication.runningApplications(withBundleIdentifier: identifier).forEach {
+                $0.terminate()
+            }
+            return
+        }
+    }
+    
     @discardableResult
     private func activate(app: NSRunningApplication?) -> Bool {
         guard let app = app else { return false }

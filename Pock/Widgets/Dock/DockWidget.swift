@@ -215,8 +215,12 @@ extension DockWidget: NSScrubberDelegate {
         var result: Bool = false
         if item.bundleIdentifier?.lowercased() == "com.apple.finder" {
             dockRepository.launch(bundleIdentifier: item.bundleIdentifier, completion: { result = $0 })
-        }else {
-            dockRepository.launch(item: item, completion: { result = $0 })
+        } else {
+            if item.isFrontmost {
+                dockRepository.quit(item: item)
+            } else {
+                dockRepository.launch(item: item, completion: { result = $0 })
+            }
         }
         NSLog("[Pock]: Did open: \(item.bundleIdentifier ?? item.path?.absoluteString ?? "Unknown") [success: \(result)]")
         scrubber.selectedIndex = -1
