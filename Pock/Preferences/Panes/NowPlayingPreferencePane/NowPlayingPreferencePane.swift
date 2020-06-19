@@ -33,6 +33,7 @@ class NowPlayingPreferencePane: NSViewController, PreferencePane {
     @IBOutlet private weak var playPauseRadioButton:    NSButton!
     @IBOutlet private weak var hideWidgetIfNoMedia:     NSButton!
     @IBOutlet private weak var animateIconWhilePlaying: NSButton!
+    @IBOutlet private weak var inverseSwipeGesture:     NSButton!
     
     override var nibName: NSNib.Name? {
         return "NowPlayingPreferencePane"
@@ -50,6 +51,7 @@ class NowPlayingPreferencePane: NSViewController, PreferencePane {
         }
         hideWidgetIfNoMedia.state     = Defaults[.hideNowPlayingIfNoMedia] ? .on : .off
         animateIconWhilePlaying.state = Defaults[.animateIconWhilePlaying] ? .on : .off
+        inverseSwipeGesture.state     = Defaults[.inverseSwipeGesture]     ? .on : .off
         setupImageViewClickGesture()
     }
     
@@ -92,6 +94,8 @@ class NowPlayingPreferencePane: NSViewController, PreferencePane {
             Defaults[.hideNowPlayingIfNoMedia] = button.state == .on
         case 1:
             Defaults[.animateIconWhilePlaying] = button.state == .on
+        case 2:
+            Defaults[.inverseSwipeGesture] = button.state == .on
         default:
             return
         }

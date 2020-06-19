@@ -63,6 +63,14 @@ class NowPlayingView: PKView {
         }
     }
     
+    /// Swiping
+    private var inverseSwiping: Bool {
+        if Defaults[.inverseSwipeGesture] {
+            return true
+        }
+        return false
+    }
+
     /// Overrides
     override init(frame frameRect: NSRect) {
         super.init(frame: NSRect(x: 0, y: 0, width: 0, height: 30))
@@ -142,8 +150,8 @@ class NowPlayingView: PKView {
             itemView?.didSwipeRight = nil
         case .default, .onlyInfo:
             itemView?.didTap        = { [unowned self] in self.togglePlayPause()    }
-            itemView?.didSwipeLeft  = { [unowned self] in self.skipToPreviousItem() }
-            itemView?.didSwipeRight = { [unowned self] in self.skipToNextItem()     }
+            itemView?.didSwipeLeft  = { [unowned self] in self.swipeLeft() }
+            itemView?.didSwipeRight = { [unowned self] in self.swipeRight()     }
         }
     }
     
@@ -169,12 +177,20 @@ class NowPlayingView: PKView {
         NowPlayingHelper.shared.togglePlayingState()
     }
     
-    @objc private func skipToNextItem() {
-        NowPlayingHelper.shared.skipToNextTrack()
+    @objc private func swipeLeft() {
+        if !inverseSwiping {
+            NowPlayingHelper.shared.skipToPreviousTrack()
+        } else {
+            NowPlayingHelper.shared.skipToNextTrack()
+        }
     }
     
-    @objc private func skipToPreviousItem() {
-        NowPlayingHelper.shared.skipToPreviousTrack()
+    @objc private func swipeRight() {
+        if !inverseSwiping {
+            NowPlayingHelper.shared.skipToNextTrack()
+        } else {
+            NowPlayingHelper.shared.skipToPreviousTrack()
+        }
     }
     
     override func didLongPressHandler() {
