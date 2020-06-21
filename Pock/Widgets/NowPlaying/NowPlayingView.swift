@@ -22,7 +22,7 @@ class NowPlayingView: PKView {
     /// Contents UI
     private var itemView:        NowPlayingItemView?
     private var playPauseButton: NSButton?
-    private var previousButton:  NSButton {
+    /*private var previousButton:  NSButton {
         let button = NSButton(image: previousIcon, target: self, action: #selector(skipToPreviousItem))
         button.bezelColor = .black
         button.snp.makeConstraints({ m in
@@ -30,14 +30,14 @@ class NowPlayingView: PKView {
         })
         return button
     }
-    private var nextButton: NSButton {
+   private var nextButton: NSButton {
         let button = NSButton(image: nextIcon, target: self, action: #selector(skipToNextItem))
         button.bezelColor = .black
         button.snp.makeConstraints({ m in
             m.width.equalTo(32)
         })
         return button
-    }
+    }*/
     
     /// Core
     private var shouldHideWidget: Bool {
@@ -131,11 +131,11 @@ class NowPlayingView: PKView {
         let views: [NSView]
         switch style {
         case .default:
-            views = [previousButton, itemView!, nextButton]
+            views = [itemView!]
         case .onlyInfo:
             views = [itemView!]
         case .playPause:
-            views = [previousButton, playPauseButton!, nextButton]
+            views = [playPauseButton!]
         }
         for view in views {
             stackView.addArrangedSubview(view)
