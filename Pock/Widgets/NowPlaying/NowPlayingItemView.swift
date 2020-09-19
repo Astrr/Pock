@@ -24,6 +24,8 @@ class NowPlayingItemView: PKDetailView {
     public var didSwipeRight: (() -> Void)?
     public var didLongPress: (() -> Void)?
     
+    private let key: KeySender = KeySender(keyCode: NX_KEYTYPE_MUTE, isAux: true)
+    
     /// Data
     public var nowPLayingItem: NowPlayingItem? {
         didSet {
@@ -63,6 +65,16 @@ class NowPlayingItemView: PKDetailView {
             let isPlaying = self?.nowPLayingItem?.isPlaying ?? false
             var title     = self?.nowPLayingItem?.title     ?? "Tap here".localized
             var artist    = self?.nowPLayingItem?.artist    ?? "to play music".localized
+            
+            // mute spotify during Ads
+            // and unmute if muted previously because of Ads
+            if artist == "Spotify" && !Defaults[.isVolumeMute] {
+                Defaults[.isVolumeMute] = true
+                self?.key.send()
+            } else if artist != "Spotify" && Defaults[.isVolumeMute] {
+                Defaults[.isVolumeMute] = false
+                self?.key.send()
+            }
             
             if title.isEmpty {
                 title = "Missing title".localized
