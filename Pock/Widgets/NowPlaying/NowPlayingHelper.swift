@@ -199,7 +199,6 @@ class NowPlayingHelper {
             if self.albumArtFallbackTimer != nil {
                 self.albumArtFallbackTimer?.invalidate()
                 self.albumArtFallbackTimer = nil
-                self.timesLeftTryUpdatingMediaContentManually = 2
                 if let previousAPITask = artworkAPITask {
                     previousAPITask.cancel()
                 }
@@ -208,6 +207,7 @@ class NowPlayingHelper {
                     previousDownloadTask.cancel()
                 }
             }
+            self.timesLeftTryUpdatingMediaContentManually = 2
             setupTimer()
         }
     }
@@ -224,7 +224,10 @@ class NowPlayingHelper {
                 }
             }
         }
-        MRMediaRemoteGetNowPlayingInfo(DispatchQueue.global(qos: .utility), { [weak self] info in
+        MRMediaRemoteGetNowPlayingInfo(DispatchQueue.main, { [weak self] info in
+            if self == nil {
+                return
+            }
             var initialRun = false
             if (self?.lastNowPlayingItem == nil) {
                 // `lastNowPlayingItem` is still nil it's the first time `updateMediaContent` is being run
@@ -310,7 +313,7 @@ class NowPlayingHelper {
     }
     
     @objc private func updateCurrentPlayingState() {
-        MRMediaRemoteGetNowPlayingApplicationIsPlaying(DispatchQueue.global(qos: .utility), {[weak self] isPlaying in
+        MRMediaRemoteGetNowPlayingApplicationIsPlaying(DispatchQueue.main, {[weak self] isPlaying in
             if self?.nowPlayingItem.appBundleIdentifier == nil {
                 self?.nowPlayingItem.isPlaying = false
             }else {
@@ -351,10 +354,20 @@ extension URLSession {
                   completionHandler(nil, nil, error)
                   return
               }
+            
+            if data == nil {
+                completionHandler(nil, nil, NSError(domain:"", code:401, userInfo:[ NSLocalizedDescriptionKey: "Invalid data"]))
+                return
+            }
               
-              let json = try! JSONSerialization.jsonObject(with: data!, options: .allowFragments)
+            let json = try? JSONSerialization.jsonObject(with: data!, options: .allowFragments)
 
-              completionHandler(data, json, nil)
+            if json == nil {
+                completionHandler(nil, nil, NSError(domain:"", code:401, userInfo:[ NSLocalizedDescriptionKey: "Invalid json"]))
+                return
+            }
+            
+            completionHandler(data, json, nil)
           }
           
           return task
