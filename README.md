@@ -9,6 +9,8 @@
 </p>
 
 
+## Personal modifications
+- Mute **Spotify** when Ads play ([check commit](https://github.com/surajsau/Pock/commit/62552d299947f8ddb1ff8792d71853c9426711e1))
 
 ## macOS Catalina (10.15)
 If you are on macOS Catalina (10.15), please click [here](https://pock.dev/docs/catalina.html) and read carefully the suggestions to have a flawless experience.
